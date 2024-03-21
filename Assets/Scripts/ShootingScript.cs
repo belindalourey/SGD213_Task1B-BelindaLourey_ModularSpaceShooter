@@ -24,6 +24,7 @@ public class ShootingScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Left mouse click to fire laser
         if (Input.GetButton("Fire1"))
         {
             float CurrentTime = Time.time;
@@ -35,21 +36,10 @@ public class ShootingScript : MonoBehaviour
 
                 Instantiate(bullet, spawnPosition, transform.rotation);
 
+                // shoot/fire timer 
                 lastFiredTime = CurrentTime;
             }
-
-            //print("Shoot!");
         }
-    }
-
-    /// <summary>
-    /// SampleMethod is a sample of how to use abstraction by
-    /// specification. It converts a provided integer to a float.
-    /// </summary>
-    /// <param name="number">any integer</param>
-    /// <returns>the number parameter as a float</returns>
-    public float SampleMethod(int number) {
-        return number;
     }
 
 }
