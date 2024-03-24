@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class EnemyMoveForward : MonoBehaviour 
 {
@@ -13,7 +12,6 @@ public class EnemyMoveForward : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
         rb.velocity = Vector2.down * initialVelocity;
     }
 

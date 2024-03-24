@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 
 public enum TagListType
@@ -7,10 +6,8 @@ public enum TagListType
     Blacklist,
     Whitelist
 }
-
 public class DestroyedOnCollision : MonoBehaviour
 {
-
     [SerializeField]
     private TagListType tagListType = TagListType.Blacklist;
 

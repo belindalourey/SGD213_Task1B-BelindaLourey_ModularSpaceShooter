@@ -1,9 +1,7 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public class SpawnOverTimeScript : MonoBehaviour
+public class SpawnOverTime : MonoBehaviour
 {
-
     // Object to spawn
     [SerializeField]
     private GameObject spawnObject;
@@ -22,12 +20,13 @@ public class SpawnOverTimeScript : MonoBehaviour
         // Stop our Spawner from being visible!
         newRenderer.enabled = false;
 
-        // SpawnDelay so only 1 enemy falls at a time
+        // SpawnDelay so enemys can only come out slowly 
         InvokeRepeating("Spawn", spawnDelay, spawnDelay);
     }
 
     void Spawn()
     {
+        // Enemy spawn location in the boundry
         float min = transform.position.x - newRenderer.bounds.size.x / 2;
         float max = transform.position.x + newRenderer.bounds.size.x / 2;
 

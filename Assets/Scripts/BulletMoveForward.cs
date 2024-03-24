@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class BulletMoveForward : MonoBehaviour {
 
@@ -20,8 +19,8 @@ public class BulletMoveForward : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        Vector2 ForceToAdd = Vector2.up * acceleration * Time.deltaTime;
+        Vector2 forceToAdd = Vector2.up * acceleration * Time.deltaTime;
 
-        rb.AddForce(ForceToAdd);
+        rb.AddForce(forceToAdd);
     }
 }
