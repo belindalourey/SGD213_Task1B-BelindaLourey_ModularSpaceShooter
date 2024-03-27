@@ -17,11 +17,11 @@ public class SpawnOverTime : MonoBehaviour
     {
         newRenderer = GetComponent<Renderer>();
 
-        // Stop our Spawner from being visible!
+        // Stop Spawner from being visible!
         newRenderer.enabled = false;
 
         // SpawnDelay so enemys can only come out slowly 
-        InvokeRepeating("Spawn", spawnDelay, spawnDelay);
+        InvokeRepeating(nameof(Spawn), spawnDelay, spawnDelay);
     }
 
     void Spawn()
@@ -31,7 +31,7 @@ public class SpawnOverTime : MonoBehaviour
         float max = transform.position.x + newRenderer.bounds.size.x / 2;
 
         // Randomly pick a point within the spawn object
-        Vector2 spawnPoint = new Vector2(Random.Range(min, max), transform.position.y);
+        Vector2 spawnPoint = new(Random.Range(min, max), transform.position.y);
 
         // Spawn the object at the 'spawnPoint' position
         Instantiate(spawnObject, spawnPoint, Quaternion.identity);

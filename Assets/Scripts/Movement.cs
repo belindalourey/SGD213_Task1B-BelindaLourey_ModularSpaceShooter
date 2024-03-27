@@ -2,7 +2,6 @@
 
 public class Movement : MonoBehaviour
 {
-    // SerializeField exposes this value to the Editor, but not to other Scripts! 
     // Speed player moves horizontaly
     public float playerAcceleration = 5000f;
 
@@ -19,8 +18,8 @@ public class Movement : MonoBehaviour
    public void HorizontalMovement(float HorizontalInput)
     {
         // force to the player moving left and right + acceleration  
-        Vector2 force = Vector2.right * HorizontalInput * playerAcceleration * Time.deltaTime;
+        Vector2 force = HorizontalInput * playerAcceleration * Time.deltaTime * Vector2.right;
+
         rb.AddForce(force);
     }
-
 }

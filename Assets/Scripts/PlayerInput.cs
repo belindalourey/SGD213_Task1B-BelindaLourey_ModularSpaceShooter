@@ -34,9 +34,9 @@ public class PlayerInput : MonoBehaviour
             }
             else
             {
+                // If shoot/fire is not active debug log
                 Debug.Log("Attach the shoot script");
             }
         }
     }
-
 }
