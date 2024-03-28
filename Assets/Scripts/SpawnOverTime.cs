@@ -33,7 +33,7 @@ public class SpawnOverTime : MonoBehaviour
         // Randomly pick a point within the spawn object
         Vector2 spawnPoint = new(Random.Range(min, max), transform.position.y);
 
-        // Spawn the object at the 'spawnPoint' position
+        // Spawn the enemy at the 'spawnPoint' position
         Instantiate(spawnObject, spawnPoint, Quaternion.identity);
     }
 }

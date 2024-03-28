@@ -15,8 +15,7 @@ public class Shoot : MonoBehaviour
     void Start()
     {
         // Spawn bullets in front of the player using maths to get location
-        bulletOffset = GetComponent<Renderer>().bounds.size.y / 2
-        + bullet.GetComponent<Renderer>().bounds.size.y / 2;
+        bulletOffset = (GetComponent<Renderer>().bounds.size.y / 2) + (bullet.GetComponent<Renderer>().bounds.size.y / 2);
     }
 
     public void Fire()

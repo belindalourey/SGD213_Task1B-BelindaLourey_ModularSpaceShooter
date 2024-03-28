@@ -2,8 +2,11 @@
 
 public class Movement : MonoBehaviour
 {
-    // Speed player moves horizontaly
-    public float playerAcceleration = 5000f;
+    // Speed set to 0 so its manualy entered in the inspector
+    public float acceleration = 0f;
+
+    // velocity starts at 2 so there is no lag
+    private readonly float initialVelocity = 2f;
 
     private Rigidbody2D rb;
 
@@ -14,12 +17,13 @@ public class Movement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    // Player horizontal movement
-   public void HorizontalMovement(float HorizontalInput)
+    // Movement and speed of game objects
+   public void Move(Vector2 directionInput)
     {
-        // force to the player moving left and right + acceleration  
-        Vector2 force = HorizontalInput * playerAcceleration * Time.deltaTime * Vector2.right;
+        // forceToAdd to the player moving + acceleration  
+        Vector2 forceToAdd = initialVelocity * acceleration * Time.deltaTime * directionInput;
 
-        rb.AddForce(force);
+        rb.AddForce(forceToAdd);
     }
 }
+

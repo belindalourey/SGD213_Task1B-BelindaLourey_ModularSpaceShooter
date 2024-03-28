@@ -2,7 +2,7 @@
 
 public class Rotate : MonoBehaviour
 {
-    //[SerializeField]
+    [SerializeField]
     private float maximumSpinSpeed = 200;
 
     // Use this for initialization

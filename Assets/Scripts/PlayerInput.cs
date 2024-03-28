@@ -18,11 +18,15 @@ public class PlayerInput : MonoBehaviour
     void Update()
     {
         // Player movement Horizontal only
-        float HorizontalInput = Input.GetAxis("Horizontal");
+        float horizontalInput = Input.GetAxis("Horizontal");
 
-        if(HorizontalInput != 0.0f )
+        if(horizontalInput != 0.0f )
         {
-            movement.HorizontalMovement(HorizontalInput);
+            // Player horizontal input
+            Vector2 direction = new(horizontalInput, 0);
+
+            // Direction movement
+            movement.Move(direction);
         }
         
         // Left mouse click to fire/shoot laser
